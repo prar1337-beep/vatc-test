@@ -1,0 +1,155 @@
+/* 1. Brand Variables (The DNA of the site) */
+:root {
+    --vatc-blue: #2952ff;  /* Extracted from Circuit lines */
+    --vatc-red: #ff3333;   /* Extracted from VATC Text */
+    --dark-bg: #0a0e17;    /* Deep technical dark blue */
+    --light-bg: #f4f6ff;   /* Clean technical white */
+    --text-color: #333;
+}
+
+/* 2. Global Reset */
+body {
+    font-family: 'Arial', sans-serif; /* Clean, geometric font */
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+/* 3. Header Styling */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background: white;
+    /* The blue top border gives it that "Circuit Board" edge */
+    border-top: 5px solid var(--vatc-blue);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.logo img {
+    height: 70px; /* Controls logo size */
+    width: auto;  /* Maintains aspect ratio */
+    display: block;
+}
+
+.main-nav nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.main-nav nav a:hover {
+    color: var(--vatc-blue);
+}
+
+/* 4. Hero Section */
+.hero {
+    /* Dark gradient background */
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a253a 100%);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    /* Red bottom border for contrast */
+    border-bottom: 3px solid var(--vatc-red);
+}
+
+.tagline {
+    color: var(--vatc-red);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.subtext {
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: var(--vatc-blue);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #002db3;
+}
+
+/* 5. Expertise Section */
+.pillars {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--vatc-blue);
+    margin-bottom: 50px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Wraps on mobile */
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lifts up slightly on hover */
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #222;
+}
+
+/* Specific borders for visual variety */
+.card-red {
+    border-top: 4px solid var(--vatc-red);
+}
+
+.card-blue {
+    border-top: 4px solid var(--vatc-blue);
+}
+
+/* 6. Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
