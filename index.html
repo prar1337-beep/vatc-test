@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VATC | Industrial Automation & Precision Embedded Hardware</title>
   
+  <!-- 1. Browser Tab Icon (Favicon) -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- 2. Open Graph & Social Cards (WhatsApp, LinkedIn, Twitter Preview) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vatcindia.com/">
+  <meta property="og:title" content="VATC | Industrial Automation & Precision Embedded Hardware">
+  <meta property="og:description" content="Proprietary industrial HMI motion controllers, high-speed cut-to-length systems, and closed-loop ultrasonic web guides built for zero downtime.">
+  <meta property="og:image" content="https://vatcindia.com/logo.png">
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- Google Fonts: Space Grotesk (Headers), Plus Jakarta Sans (Body), JetBrains Mono (Specs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
@@ -43,12 +57,15 @@
         linear-gradient(to right, rgba(255, 30, 30, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 30, 30, 0.04) 1px, transparent 1px);
     }
+    input[type=range]::-webkit-slider-thumb {
+      background: #ff1e1e;
+    }
   </style>
 </head>
 
 <body class="bg-vatc-dark text-slate-100 antialiased selection:bg-vatc-red selection:text-white font-sans bg-tech-grid">
 
-  <!-- Ambient Glow -->
+  <!-- Ambient Glow Behind Hero -->
   <div class="fixed inset-0 pointer-events-none z-0">
     <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-vatc-red/10 blur-[160px] rounded-full"></div>
   </div>
@@ -61,14 +78,14 @@
         <div class="flex items-center gap-4">
           <span class="flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            STATUS: ACTIVE PRODUCTION LINE
+            SYS_STATUS: ACTIVE [100% OPERATIONAL]
           </span>
           <span>// LOCATION: MUMBAI, IN</span>
-          <span>// COMPLIANCE: IEC 61131-3 &bull; EN 60204-1</span>
+          <span>// STANDARDS: IEC 61131-3 &bull; EN 60204-1</span>
         </div>
         <div class="flex items-center gap-4 text-slate-300">
-          <span>HARDWARE & EMBEDDED CONTROLS</span>
-          <span class="text-vatc-red">REV 3.2</span>
+          <span>MOTION & EMBEDDED ARCHITECTURE</span>
+          <span class="text-vatc-red font-bold">REV 3.2</span>
         </div>
       </div>
     </div>
@@ -82,15 +99,15 @@
           <img src="logo.png" alt="VATC Logo" class="h-8 md:h-9 object-contain" />
           <div class="border-l border-vatc-border pl-3 hidden md:block">
             <span class="text-[10px] tracking-widest uppercase font-mono font-bold text-white block leading-tight">VATC INDIA</span>
-            <span class="text-[9px] tracking-widest uppercase font-mono text-slate-400 block leading-tight">Precision Industrial Systems</span>
+            <span class="text-[9px] tracking-widest uppercase font-mono text-slate-400 block leading-tight">Automation Technology Co.</span>
           </div>
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-slate-300">
           <a href="#hardware" class="hover:text-vatc-red transition">Deployed Hardware</a>
-          <a href="#systems" class="hover:text-vatc-red transition">Capabilities</a>
-          <a href="#simulator" class="hover:text-vatc-red transition">Latency Simulator</a>
+          <a href="#simulator" class="hover:text-vatc-red transition">Telemetry Simulator</a>
+          <a href="#architecture" class="hover:text-vatc-red transition">Architecture</a>
           <a href="#standards" class="hover:text-vatc-red transition">Standards</a>
         </nav>
 
@@ -98,13 +115,13 @@
         <div class="flex items-center gap-3">
           <a href="#contact" class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider bg-vatc-red hover:bg-vatc-redHover text-white px-4 py-2.5 rounded transition shadow-lg shadow-vatc-red/20">
             <i data-lucide="zap" class="w-4 h-4"></i>
-            <span>Request Quote</span>
+            <span>Request Specs</span>
           </a>
         </div>
       </div>
     </header>
 
-    <!-- HERO SECTION WITH LOGO ANIMATION INTEGRATION -->
+    <!-- HERO SECTION WITH VIDEO ANIMATION CARD -->
     <section class="max-w-7xl mx-auto px-6 pt-16 pb-16 lg:pt-24 lg:pb-24">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
@@ -142,22 +159,22 @@
           <div class="p-6 rounded-2xl bg-vatc-surface border border-vatc-border relative overflow-hidden group shadow-2xl">
             <div class="flex justify-between items-center pb-4 border-b border-vatc-border/80 font-mono text-xs text-slate-400">
               <span class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80 animate-pulse"></span>
                 <span>VATC_CORE_BOOT</span>
               </span>
               <span class="text-[10px] text-emerald-400">INITIALIZED</span>
             </div>
 
-<!-- The Animation Container -->
-<div class="my-6 rounded-lg bg-black/60 p-6 flex flex-col items-center justify-center border border-vatc-border/40">
-  <video autoplay loop muted playsinline class="w-56 h-auto object-contain rounded">
-    <source src="vatc-anim.mp4" type="video/mp4" />
-    Your browser does not support video playback.
-  </video>
-  <div class="font-mono text-[11px] text-slate-400 mt-4 tracking-widest uppercase">
-    // System Architecture Locked
-  </div>
-</div>
+            <!-- HTML5 Video Component -->
+            <div class="my-6 rounded-lg bg-black/60 p-6 flex flex-col items-center justify-center border border-vatc-border/40">
+              <video autoplay loop muted playsinline class="w-56 h-auto object-contain rounded">
+                <source src="vatc-anim.mp4" type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
+              <div class="font-mono text-[11px] text-slate-400 mt-4 tracking-widest uppercase">
+                // System Architecture Locked
+              </div>
+            </div>
 
             <div class="grid grid-cols-2 gap-3 text-left font-mono text-xs">
               <div class="p-2.5 rounded bg-vatc-dark border border-vatc-border">
@@ -192,12 +209,12 @@
         <!-- Hardware Unit 1: Cut-To-Length Controller -->
         <div class="rounded-xl border border-vatc-border bg-vatc-surface overflow-hidden group hover:border-vatc-red/50 transition">
           <div class="relative bg-black/40 overflow-hidden aspect-video flex items-center justify-center">
-            <img src="hmi-ctl-field.jpg" alt="VATC Cut to Length Machine Controller" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="20260621_141347.jpg" alt="VATC Cut to Length Machine Controller" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute top-4 left-4 bg-vatc-dark/90 backdrop-blur border border-vatc-border text-[11px] font-mono text-emerald-400 px-3 py-1 rounded">
-              RUNNING // 16 STK/MIN
+              ACTIVE // 16 STK/MIN
             </div>
             <div class="absolute bottom-4 right-4 bg-vatc-dark/90 backdrop-blur border border-vatc-border text-[11px] font-mono text-white px-3 py-1 rounded">
-              LENGTH: 485.00 MM
+              SET LENGTH: 485.00 MM
             </div>
           </div>
           
@@ -222,7 +239,7 @@
         <!-- Hardware Unit 2: Web Guiding / Center Aligner -->
         <div class="rounded-xl border border-vatc-border bg-vatc-surface overflow-hidden group hover:border-vatc-red/50 transition">
           <div class="relative bg-black/40 overflow-hidden aspect-video flex items-center justify-center">
-            <img src="hmi-aligner-field.jpg" alt="VATC Web Guiding and Center Aligner" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="20260621_141432.jpg" alt="VATC Web Guiding and Center Aligner" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute top-4 left-4 bg-vatc-dark/90 backdrop-blur border border-vatc-border text-[11px] font-mono text-sky-400 px-3 py-1 rounded">
               MODE: CENTER AUTO-SEEK
             </div>
@@ -254,7 +271,7 @@
       <!-- Secondary Bench & Enclosure Strip -->
       <div class="mt-8 grid md:grid-cols-2 gap-6">
         <div class="p-6 rounded-xl border border-vatc-border bg-vatc-card flex items-center gap-6">
-          <img src="hmi-ctl-bench.jpg" alt="VATC Bench Unit" class="w-28 h-28 object-cover rounded-lg border border-vatc-border shrink-0" />
+          <img src="20260603_134223(1).jpg" alt="VATC Bench Unit" class="w-28 h-28 object-cover rounded-lg border border-vatc-border shrink-0" />
           <div>
             <h4 class="text-white font-bold text-base">Custom Panel-Mount MS Enclosures</h4>
             <p class="text-xs text-slate-400 mt-1 leading-relaxed">
@@ -264,7 +281,7 @@
         </div>
 
         <div class="p-6 rounded-xl border border-vatc-border bg-vatc-card flex items-center gap-6">
-          <img src="hmi-splash.jpg" alt="VATC Splash Screen" class="w-28 h-28 object-cover rounded-lg border border-vatc-border shrink-0" />
+          <img src="20260603_134223.jpg" alt="VATC Splash Screen" class="w-28 h-28 object-cover rounded-lg border border-vatc-border shrink-0" />
           <div>
             <h4 class="text-white font-bold text-base">Proprietary Touch Screen Firmware</h4>
             <p class="text-xs text-slate-400 mt-1 leading-relaxed">
@@ -275,66 +292,239 @@
       </div>
     </section>
 
-    <!-- CONTACT / FOOTER -->
-    <footer id="contact" class="max-w-7xl mx-auto px-6 py-20 border-t border-vatc-border">
+    <!-- INTERACTIVE SECTION: TELEMETRY SIMULATOR -->
+    <section id="simulator" class="max-w-7xl mx-auto px-6 py-20 border-t border-vatc-border">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs font-mono font-semibold uppercase tracking-widest text-vatc-red">// Technical Benchmark Tool</span>
+        <h2 class="text-3xl font-bold font-display text-white mt-2">Web Guiding Latency & Error Simulator</h2>
+        <p class="text-slate-400 mt-2 text-sm">
+          Simulate line speed dynamics against VATC’s closed-loop PID servo/stepper response. Adjust the production line speed to view dynamic corrective displacement.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 p-8 rounded-xl bg-vatc-surface border border-vatc-border">
+        
+        <!-- Controls -->
+        <div class="lg:col-span-1 space-y-6">
+          <div>
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-2">
+              <span>LINE SPEED (M/MIN):</span>
+              <span id="speedVal" class="text-vatc-red font-bold">120 m/min</span>
+            </div>
+            <input id="speedRange" type="range" min="20" max="350" value="120" class="w-full h-1.5 bg-vatc-card rounded-lg appearance-none cursor-pointer accent-vatc-red" />
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-2">
+              <span>UNWIND DRIFT OFFSET (MM):</span>
+              <span id="driftVal" class="text-amber-400 font-bold">2.5 mm</span>
+            </div>
+            <input id="driftRange" type="range" min="0.5" max="10.0" step="0.5" value="2.5" class="w-full h-1.5 bg-vatc-card rounded-lg appearance-none cursor-pointer accent-amber-400" />
+          </div>
+
+          <div class="p-4 rounded bg-vatc-dark border border-vatc-border font-mono text-xs space-y-2 text-slate-400">
+            <div class="text-slate-300 font-bold uppercase">// Sensor Logic Engine</div>
+            <div>&bull; Transducer Loop: <span class="text-white">Analog 4-20mA</span></div>
+            <div>&bull; Interrupt Period: <span class="text-white">1.0 ms</span></div>
+            <div>&bull; Driver Stage: <span class="text-white">Direct H-Bridge / Stepper</span></div>
+          </div>
+        </div>
+
+        <!-- Telemetry Output Display -->
+        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-lg bg-vatc-dark border border-vatc-border flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Total Correction Time</span>
+              <div id="corrTime" class="text-3xl font-mono font-bold text-white mt-2">18.5 ms</div>
+            </div>
+            <p class="text-xs text-slate-400 mt-4 leading-relaxed font-mono">
+              Time elapsed from edge transducer threshold trigger to carriage stabilization.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-lg bg-vatc-dark border border-vatc-border flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Max Material Deviation</span>
+              <div id="matDev" class="text-3xl font-mono font-bold text-emerald-400 mt-2">&plusmn; 0.04 mm</div>
+            </div>
+            <p class="text-xs text-slate-400 mt-4 leading-relaxed font-mono">
+              Residual lateral runout before slitting or rewinding roll contact.
+            </p>
+          </div>
+
+          <div class="sm:col-span-2 p-5 rounded-lg bg-vatc-card border border-vatc-border flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="text-xs font-mono text-slate-300 font-semibold uppercase">Closed-Loop PID Status: Deterministic Lock</span>
+            </div>
+            <span class="text-[10px] font-mono bg-vatc-dark px-3 py-1 rounded text-vatc-red border border-vatc-border">ZERO HUNTING</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HARDWARE ARCHITECTURE BLUEPRINT -->
+    <section id="architecture" class="max-w-7xl mx-auto px-6 py-20 border-t border-vatc-border">
+      <div class="mb-14">
+        <span class="text-xs font-mono font-semibold uppercase tracking-widest text-vatc-red">// Schematics & Topology</span>
+        <h2 class="text-3xl font-bold font-display text-white mt-2">Hardware-Level Ruggedness</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-xl bg-vatc-surface border border-vatc-border hover:border-vatc-borderLight transition">
+          <div class="font-mono text-xs text-vatc-red mb-3">STAGE 01 // INPUT LEVEL</div>
+          <h3 class="text-lg font-bold text-white mb-2">Noise-Immune Optoisolation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            High-speed optocouplers isolate factory line spikes up to 2.5 kV. Proximity sensors and encoder lines are decoupled before touching logic pins.
+          </p>
+          <div class="mt-4 pt-4 border-t border-vatc-border/60 text-[11px] font-mono text-slate-500">
+            PROTECTION: TVS Array + RC Filtering
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-vatc-surface border border-vatc-border hover:border-vatc-borderLight transition">
+          <div class="font-mono text-xs text-vatc-red mb-3">STAGE 02 // LOGIC CORE</div>
+          <h3 class="text-lg font-bold text-white mb-2">Dedicated 32-Bit Microarchitecture</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Direct bare-metal C control loops executing PID calculation every 1 millisecond with zero OS overhead, guaranteeing deterministic cycle execution.
+          </p>
+          <div class="mt-4 pt-4 border-t border-vatc-border/60 text-[11px] font-mono text-slate-500">
+            CLOCK: 64MHz ARM Cortex Core
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-vatc-surface border border-vatc-border hover:border-vatc-borderLight transition">
+          <div class="font-mono text-xs text-vatc-red mb-3">STAGE 03 // DRIVE STAGE</div>
+          <h3 class="text-lg font-bold text-white mb-2">Dynamic Power & Thermal Handling</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Monolithic H-Bridge motor drivers with integrated current sensing, over-temperature protection, and synchronous rectification for high inductive loads.
+          </p>
+          <div class="mt-4 pt-4 border-t border-vatc-border/60 text-[11px] font-mono text-slate-500">
+            CHOPPING FREQ: 20 kHz PWM
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERNATIONAL STANDARDS MATRIX -->
+    <section id="standards" class="max-w-7xl mx-auto px-6 py-20 border-t border-vatc-border">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <img src="logo.png" alt="VATC" class="h-9 mb-6 object-contain" />
-          <h2 class="text-3xl font-bold font-display text-white">Direct Line to Automation Engineering</h2>
-          <p class="text-slate-400 mt-4 text-sm leading-relaxed max-w-md">
-            Need an on-machine retrofit, a cut-to-length controller upgrade, or custom web guiding assemblies? Connect directly with our engineering workshop.
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-vatc-red">// Quality Assurance</span>
+          <h2 class="text-3xl font-bold font-display text-white mt-2">Built to International Industrial Standards</h2>
+          <p class="text-slate-400 mt-4 text-sm leading-relaxed">
+            We reject hobbyist breakout modules and unshielded hobby wiring. Every VATC control cabinet and PCB is architected in accordance with rigorous industrial criteria.
           </p>
 
-          <div class="mt-8 space-y-4 text-sm text-slate-300 font-mono">
-            <div class="flex items-center gap-3">
-              <i data-lucide="mail" class="w-4 h-4 text-vatc-red"></i>
-              <span>engineering@vatcindia.com</span>
+          <div class="mt-6 space-y-3 font-mono text-xs">
+            <div class="flex items-center gap-3 p-3 rounded bg-vatc-surface border border-vatc-border">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-vatc-red"></i>
+              <span class="text-slate-300"><strong class="text-white">EN 60204-1:</strong> Electrical Safety of Industrial Machinery</span>
             </div>
-            <div class="flex items-center gap-3">
-              <i data-lucide="map-pin" class="w-4 h-4 text-vatc-red"></i>
-              <span>Mumbai, Maharashtra, India</span>
+            <div class="flex items-center gap-3 p-3 rounded bg-vatc-surface border border-vatc-border">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-vatc-red"></i>
+              <span class="text-slate-300"><strong class="text-white">IEC 61131-3:</strong> PLC Software Architecture Standards</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded bg-vatc-surface border border-vatc-border">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-vatc-red"></i>
+              <span class="text-slate-300"><strong class="text-white">IP65 / NEMA 4X:</strong> Enclosure Dust & Splash Tolerance</span>
             </div>
           </div>
         </div>
 
-        <!-- Quick Inquiry Form -->
-        <div class="p-8 rounded-xl border border-vatc-border bg-vatc-surface">
-          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Inquiry recorded. VATC Technical Team will connect within 24 hours.');">
+        <!-- Working Netlify Forms Submission Block -->
+        <div class="p-8 rounded-xl bg-vatc-surface border border-vatc-border">
+          <div class="font-mono text-xs text-slate-400 uppercase mb-4">// Direct Engineering Specification Request</div>
+          
+          <form 
+            name="inquiry" 
+            method="POST" 
+            data-netlify="true" 
+            data-netlify-honeypot="bot-field"
+            class="space-y-4"
+          >
+            <!-- Netlify Bot Protection -->
+            <input type="hidden" name="form-name" value="inquiry" />
+            <p class="hidden">
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
             <div>
               <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Plant / OEM Name</label>
-              <input type="text" placeholder="Company Name" class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required />
+              <input type="text" name="company" placeholder="e.g. Precision Packaging Ltd" class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required />
             </div>
+            
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Contact Person</label>
-                <input type="text" placeholder="Your Name" class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required />
+                <input type="text" name="name" placeholder="Engineer Name" class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required />
               </div>
               <div>
                 <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Phone / WhatsApp</label>
-                <input type="tel" placeholder="+91..." class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required />
+                <input type="tel" name="phone" placeholder="+91..." class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required />
               </div>
             </div>
+
             <div>
-              <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">System Requirement</label>
-              <textarea rows="3" placeholder="Cut to length, Web guide, Custom control panel..." class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono"></textarea>
+              <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Application Scope</label>
+              <textarea name="message" rows="3" placeholder="Web aligner, custom PLC logic, punching machine retrofit..." class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required></textarea>
             </div>
+
             <button type="submit" class="w-full bg-vatc-red hover:bg-vatc-redHover text-white font-mono font-bold py-3 rounded text-xs transition uppercase tracking-wider">
               Submit Engineering Inquiry
             </button>
           </form>
         </div>
       </div>
+    </section>
 
-      <div class="mt-16 pt-8 border-t border-vatc-border/60 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p>&copy; 2026 Viraj Automation Technology Co. (VATC). All rights reserved.</p>
-        <p class="font-mono text-[11px] text-slate-400">Cut-to-Length &bull; Web Guiding &bull; Embedded Control</p>
+    <!-- FOOTER -->
+    <footer id="contact" class="max-w-7xl mx-auto px-6 py-16 border-t border-vatc-border text-xs text-slate-500 font-mono">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="VATC" class="h-6 object-contain" />
+          <span>&copy; 2026 Viraj Automation Technology Co. (VATC). All rights reserved.</span>
+        </div>
+        <div class="flex gap-6 text-slate-400">
+          <span>MUMBAI // 19.2183° N, 72.8532° E</span>
+          <a href="mailto:engineering@vatcindia.com" class="hover:text-vatc-red transition">engineering@vatcindia.com</a>
+        </div>
       </div>
     </footer>
 
   </div>
 
+  <!-- Lucide & Dynamic Simulator Logic -->
   <script>
     lucide.createIcons();
+
+    const speedRange = document.getElementById('speedRange');
+    const speedVal = document.getElementById('speedVal');
+    const driftRange = document.getElementById('driftRange');
+    const driftVal = document.getElementById('driftVal');
+    const corrTime = document.getElementById('corrTime');
+    const matDev = document.getElementById('matDev');
+
+    function updateSimulator() {
+      const speed = parseFloat(speedRange.value);
+      const drift = parseFloat(driftRange.value);
+
+      speedVal.innerText = `${speed} m/min`;
+      driftVal.innerText = `${drift.toFixed(1)} mm`;
+
+      const latencyMs = (12 + (drift * 2.4) + (speed * 0.02)).toFixed(1);
+      const residualDev = (0.015 + (speed * 0.0002) + (drift * 0.004)).toFixed(2);
+
+      corrTime.innerText = `${latencyMs} ms`;
+      matDev.innerText = `± ${residualDev} mm`;
+    }
+
+    speedRange.addEventListener('input', updateSimulator);
+    driftRange.addEventListener('input', updateSimulator);
+    updateSimulator();
   </script>
 </body>
 </html>
