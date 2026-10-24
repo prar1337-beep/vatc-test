@@ -5,23 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VATC | Industrial Automation & Precision Embedded Hardware</title>
   
-  <!-- 1. Browser Tab Icon (Favicon) -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <!-- Crisp Vector Favicon (Solves the cramming issue) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080a0f'/%3E%3Cpath d='M5 7 L16 25 L27 7 L21.5 7 L16 16.5 L10.5 7 Z' fill='%23ff1e1e'/%3E%3C/svg%3E">
 
-  <!-- 2. Open Graph & Social Cards (WhatsApp, LinkedIn, Twitter Preview) -->
+  <!-- Open Graph / WhatsApp Preview Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vatcindia.com/">
   <meta property="og:title" content="VATC | Industrial Automation & Precision Embedded Hardware">
   <meta property="og:description" content="Proprietary industrial HMI motion controllers, high-speed cut-to-length systems, and closed-loop ultrasonic web guides built for zero downtime.">
   <meta property="og:image" content="https://vatcindia.com/logo.png">
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Google Fonts: Space Grotesk (Headers), Plus Jakarta Sans (Body), JetBrains Mono (Specs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
@@ -63,7 +59,7 @@
   </style>
 </head>
 
-<body class="bg-vatc-dark text-slate-100 antialiased selection:bg-vatc-red selection:text-white font-sans bg-tech-grid">
+<body class="bg-vatc-dark text-slate-100 antialiased selection:bg-vatc-red selection:text-white font-sans bg-tech-grid pb-12">
 
   <!-- Ambient Glow Behind Hero -->
   <div class="fixed inset-0 pointer-events-none z-0">
@@ -72,7 +68,7 @@
 
   <div class="relative z-10">
 
-    <!-- TOP TELEMETRY STATUS BAR -->
+    <!-- TOP TELEMETRY STATUS BAR WITH LIVE CLOCK -->
     <div class="border-b border-vatc-border/60 bg-vatc-dark/95 text-[11px] font-mono py-1.5 px-6 hidden sm:block">
       <div class="max-w-7xl mx-auto flex justify-between items-center text-slate-400">
         <div class="flex items-center gap-4">
@@ -84,7 +80,7 @@
           <span>// STANDARDS: IEC 61131-3 &bull; EN 60204-1</span>
         </div>
         <div class="flex items-center gap-4 text-slate-300">
-          <span>MOTION & EMBEDDED ARCHITECTURE</span>
+          <span id="liveClock" class="text-slate-400 font-mono">00:00:00 IST</span>
           <span class="text-vatc-red font-bold">REV 3.2</span>
         </div>
       </div>
@@ -111,8 +107,18 @@
           <a href="#standards" class="hover:text-vatc-red transition">Standards</a>
         </nav>
 
-        <!-- CTA & Quick Connect -->
+        <!-- CTAs: WhatsApp Direct + Form Trigger -->
         <div class="flex items-center gap-3">
+          <!-- WhatsApp Quick Action -->
+          <a href="https://wa.me/919999999999?text=Hello%20VATC%20Engineering,%20I%20am%20inquiring%20about%20your%20industrial%20controllers%20and%20web%20aligners." 
+             target="_blank" 
+             rel="noopener"
+             class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/30 px-3.5 py-2.5 rounded transition">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">WhatsApp</span>
+          </a>
+
+          <!-- Primary Spec CTA -->
           <a href="#contact" class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider bg-vatc-red hover:bg-vatc-redHover text-white px-4 py-2.5 rounded transition shadow-lg shadow-vatc-red/20">
             <i data-lucide="zap" class="w-4 h-4"></i>
             <span>Request Specs</span>
@@ -435,7 +441,7 @@
           </div>
         </div>
 
-        <!-- Working Netlify Forms Submission Block -->
+        <!-- Netlify Forms Submission Block -->
         <div class="p-8 rounded-xl bg-vatc-surface border border-vatc-border">
           <div class="font-mono text-xs text-slate-400 uppercase mb-4">// Direct Engineering Specification Request</div>
           
@@ -446,7 +452,6 @@
             data-netlify-honeypot="bot-field"
             class="space-y-4"
           >
-            <!-- Netlify Bot Protection -->
             <input type="hidden" name="form-name" value="inquiry" />
             <p class="hidden">
               <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -470,7 +475,7 @@
 
             <div>
               <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Application Scope</label>
-              <textarea name="message" rows="3" placeholder="Web aligner, custom PLC logic, punching machine retrofit..." class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required></textarea>
+              <textarea name="message" rows="3" placeholder="Cut to length, Web guide, Custom control panel..." class="w-full bg-vatc-dark border border-vatc-border rounded px-4 py-2.5 text-xs text-white focus:outline-none focus:border-vatc-red transition font-mono" required></textarea>
             </div>
 
             <button type="submit" class="w-full bg-vatc-red hover:bg-vatc-redHover text-white font-mono font-bold py-3 rounded text-xs transition uppercase tracking-wider">
@@ -497,10 +502,35 @@
 
   </div>
 
-  <!-- Lucide & Dynamic Simulator Logic -->
+  <!-- PERSISTENT FLOATING WHATSAPP BEACON -->
+  <a href="https://wa.me/919619443622?text=Hello%20VATC%20Engineering,%20I%20am%20inquiring%20about%20your%20industrial%20controllers%20and%20web%20aligners." 
+     target="_blank" 
+     rel="noopener"
+     class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 bg-[#0f131a]/90 hover:bg-[#161a24] text-white border border-emerald-500/40 px-4 py-2.5 rounded-full shadow-2xl backdrop-blur-md transition-transform hover:scale-105 group">
+    <span class="relative flex h-2.5 w-2.5">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+    </span>
+    <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span class="font-mono text-xs font-semibold tracking-wider text-slate-200 group-hover:text-white transition">Direct Engineer Line</span>
+  </a>
+
+  <!-- Script Logic -->
   <script>
     lucide.createIcons();
 
+    // 1. Live IST Clock
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const timeStr = now.toLocaleTimeString('en-GB', options);
+      const clockEl = document.getElementById('liveClock');
+      if (clockEl) clockEl.innerText = `${timeStr} IST`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 2. Telemetry Simulator
     const speedRange = document.getElementById('speedRange');
     const speedVal = document.getElementById('speedVal');
     const driftRange = document.getElementById('driftRange');
