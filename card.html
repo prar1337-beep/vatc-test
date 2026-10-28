@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>VATC | Digital Business Card</title>
+  <title>Parag Kapani | VATC</title>
 
-  <!-- Vector Favicon -->
+  <!-- High-DPI Vector Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080a0f'/%3E%3Cpath d='M5 7 L16 25 L27 7 L21.5 7 L16 16.5 L10.5 7 Z' fill='%23ff1e1e'/%3E%3C/svg%3E">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Parag Kapani | Founder & Technical Director - VATC">
-  <meta property="og:description" content="Industrial Automation, Web Guiding Systems & High-Speed Embedded Motion Control.">
+  <meta property="og:title" content="Parag Kapani | Founder - VATC">
+  <meta property="og:description" content="Precision Web Guiding Systems & High-Speed Industrial Motion Control.">
   <meta property="og:image" content="https://vatcindia.com/logo.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,217 +18,194 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #06080c;
+      background-color: #07090e;
     }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .font-display { font-family: 'Space Grotesk', sans-serif; }
 
-    /* Industrial Carbon Texture */
-    .carbon-surface {
-      background: radial-gradient(circle at 50% 0%, #151924 0%, #0c0f17 75%, #080a0f 100%);
+    /* Deep Obsidian Milled Finish */
+    .titanium-card {
+      background: radial-gradient(circle at 50% -20%, #171b26 0%, #0d1017 65%, #080a0f 100%);
       box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.85),
+        0 30px 60px -15px rgba(0, 0, 0, 0.9),
         0 0 0 1px rgba(255, 255, 255, 0.08),
-        inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
     }
 
-    /* Metallic Sheen Sweep Animation */
-    .sheen-card {
+    /* Subtle Specular Sheen (Plays once or loops slowly) */
+    .sheen-layer {
       position: relative;
       overflow: hidden;
     }
-    .sheen-card::after {
+    .sheen-layer::after {
       content: '';
       position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 300%;
-      height: 300%;
+      top: -150%;
+      left: -150%;
+      width: 400%;
+      height: 400%;
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0) 40%,
-        rgba(255, 255, 255, 0.07) 48%,
-        rgba(255, 255, 255, 0.15) 50%,
-        rgba(255, 255, 255, 0.07) 52%,
-        rgba(255, 255, 255, 0) 60%
+        rgba(255, 255, 255, 0) 42%,
+        rgba(255, 255, 255, 0.06) 48%,
+        rgba(255, 255, 255, 0.12) 50%,
+        rgba(255, 255, 255, 0.06) 52%,
+        rgba(255, 255, 255, 0) 58%
       );
-      transform: rotate(-15deg);
-      animation: sweep 7s infinite ease-in-out;
+      transform: rotate(-20deg);
+      animation: lightSweep 8s infinite ease-in-out;
       pointer-events: none;
     }
-    @keyframes sweep {
-      0% { transform: translateY(-120%) rotate(-15deg); }
-      20% { transform: translateY(120%) rotate(-15deg); }
-      100% { transform: translateY(120%) rotate(-15deg); }
+    @keyframes lightSweep {
+      0% { transform: translateY(-130%) rotate(-20deg); }
+      25% { transform: translateY(130%) rotate(-20deg); }
+      100% { transform: translateY(130%) rotate(-20deg); }
     }
 
-    /* Tactile Membrane Button Press Physics */
-    .tactile-btn {
-      transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Tactile Milled Touch-Cell Physics */
+    .touch-cell {
+      background: rgba(14, 18, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0,0,0,0.4);
+      transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .tactile-btn:active {
-      transform: translateY(2px) scale(0.985);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(0, 0, 0, 0.6);
+    .touch-cell:active {
+      transform: scale(0.975);
+      background: rgba(9, 12, 18, 0.95);
+      border-color: rgba(255, 30, 30, 0.4);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
     }
   </style>
 </head>
 
 <body class="min-h-screen text-slate-100 flex items-center justify-center p-4 sm:p-6 antialiased selection:bg-red-600 selection:text-white">
 
-  <!-- Ambient Backdrop Light -->
+  <!-- Subtle Laser Glow Behind Card -->
   <div class="fixed inset-0 pointer-events-none">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[380px] h-[380px] bg-red-600/10 blur-[120px] rounded-full"></div>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[340px] h-[340px] bg-red-600/10 blur-[130px] rounded-full"></div>
   </div>
 
-  <main class="w-full max-w-md relative z-10 space-y-4">
+  <main class="w-full max-w-[390px] relative z-10">
 
-    <!-- THE TACTILE SMART CARD -->
-    <div class="carbon-surface sheen-card rounded-2xl p-6 sm:p-7 border border-slate-800/80">
-      
-      <!-- Card Top: Smart-Chip & Brand Header -->
-      <div class="flex items-start justify-between">
-        
-        <!-- Metallic NFC Smart-Chip Emulation -->
-        <div class="w-11 h-9 rounded bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 p-[1px] shadow-md shadow-amber-900/30">
-          <div class="w-full h-full bg-[#1c1811] rounded-[3px] grid grid-cols-2 gap-[2px] p-1 border border-amber-300/40 opacity-90">
-            <div class="border border-amber-500/40 rounded-sm"></div>
-            <div class="border border-amber-500/40 rounded-sm"></div>
-            <div class="border border-amber-500/40 rounded-sm"></div>
-            <div class="border border-amber-500/40 rounded-sm"></div>
-          </div>
-        </div>
+    <!-- THE MONOLITHIC SMART CARD -->
+    <div class="titanium-card sheen-layer rounded-2xl p-6 sm:p-7 border border-slate-800">
 
-        <!-- VATC Brand Header -->
-        <div class="flex items-center gap-2">
-          <img src="logo.png" alt="VATC" class="h-6 object-contain" />
-          <span class="text-[9px] font-mono tracking-widest text-slate-400 uppercase font-semibold border-l border-slate-700 pl-2">
-            EXP &bull; 2026
+      <!-- Top Row: Prominent Logo + Hardware Code -->
+      <div class="flex items-center justify-between pb-6 border-b border-white/[0.06]">
+        <img src="logo.png" alt="VATC" class="h-10 sm:h-11 object-contain filter drop-shadow-[0_2px_8px_rgba(255,30,30,0.25)]" />
+        <span class="font-mono text-[10px] tracking-widest text-slate-400 uppercase font-semibold">
+          VATC // CORP
+        </span>
+      </div>
+
+      <!-- Identity & Authority -->
+      <div class="mt-6">
+        <h1 class="text-2xl sm:text-[28px] font-bold font-display text-white tracking-tight leading-tight">
+          Parag Kapani
+        </h1>
+        <div class="mt-1 flex items-center gap-2">
+          <span class="font-mono text-xs font-semibold tracking-wider text-red-500 uppercase">
+            Founder
+          </span>
+          <span class="text-slate-600 text-xs">&bull;</span>
+          <span class="font-mono text-xs text-slate-400">
+            Viraj Automation Technology Co.
           </span>
         </div>
       </div>
 
-      <!-- Founder Identity -->
-      <div class="mt-8">
-        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-500/10 border border-red-500/20 text-[10px] font-mono text-red-400 mb-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-          FOUNDER &bull; VATC INDIA
-        </div>
-        
-        <h1 class="text-2xl sm:text-3xl font-bold font-display text-white tracking-tight">
-          Parag Kapani
-        </h1>
-        <p class="text-xs sm:text-sm font-mono text-slate-400 mt-1">
-          Technical Director &bull; Automation Systems
-        </p>
-      </div>
-
-      <!-- Company Focus Tagline -->
-      <p class="mt-4 text-xs text-slate-300 leading-relaxed font-sans border-t border-slate-800/80 pt-4">
-        Custom Web Aligners, High-Speed Cut-to-Length Controls, and Turnkey Motion Engineering for Heavy Industrial Production Lines.
+      <p class="mt-3.5 text-xs text-slate-300 leading-relaxed font-sans">
+        Custom Web Aligners, High-Speed Cut-to-Length Units, and Turnkey Motion Systems for Continuous Heavy Duty Production Lines.
       </p>
 
-      <!-- Live Exhibition Status Strip -->
-      <div class="mt-5 flex items-center justify-between text-[10px] font-mono text-slate-400 bg-black/40 border border-slate-800/80 px-3 py-2 rounded-lg">
-        <span class="flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>AVAILABLE AT EXPO</span>
-        </span>
-        <span class="text-slate-500">MUMBAI &bull; MH</span>
+      <!-- INTEGRATED ACTION CLUSTER DIRECTLY ON CARD -->
+      <div class="mt-7 space-y-2.5">
+
+        <!-- 1-Tap Save Contact (Primary Action Cell) -->
+        <button onclick="saveContact()" class="w-full touch-cell rounded-xl p-3.5 flex items-center justify-center gap-2.5 bg-white text-slate-950 hover:bg-slate-200 border-none shadow-lg cursor-pointer">
+          <i data-lucide="user-check" class="w-4 h-4 text-slate-950"></i>
+          <span class="font-display font-bold text-xs uppercase tracking-wider text-slate-950">Save Contact to Phone</span>
+        </button>
+
+        <!-- 2x2 Grid for Communication Channels -->
+        <div class="grid grid-cols-2 gap-2.5 pt-1">
+          
+          <!-- WhatsApp Direct -->
+          <a href="https://wa.me/919619443622?text=Hello%20Parag,%20connecting%20regarding%20VATC%20automation%20systems." 
+             target="_blank" 
+             rel="noopener"
+             class="touch-cell rounded-xl p-3 flex flex-col justify-between group">
+            <div class="flex items-center justify-between text-slate-400 group-hover:text-emerald-400 transition">
+              <span class="text-[10px] font-mono uppercase tracking-wider">Direct</span>
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+            <div class="mt-2 text-left">
+              <span class="block text-xs font-bold text-white group-hover:text-emerald-400 transition">WhatsApp</span>
+              <span class="block text-[10px] font-mono text-slate-400">Instant Chat</span>
+            </div>
+          </a>
+
+          <!-- Voice Phone Line -->
+          <a href="tel:+919619443622" 
+             class="touch-cell rounded-xl p-3 flex flex-col justify-between group">
+            <div class="flex items-center justify-between text-slate-400 group-hover:text-red-400 transition">
+              <span class="text-[10px] font-mono uppercase tracking-wider">Voice</span>
+              <i data-lucide="phone-call" class="w-4 h-4 text-red-400"></i>
+            </div>
+            <div class="mt-2 text-left">
+              <span class="block text-xs font-bold text-white group-hover:text-red-400 transition">Call Line</span>
+              <span class="block text-[10px] font-mono text-slate-400">Direct Connect</span>
+            </div>
+          </a>
+
+          <!-- Website Portal -->
+          <a href="https://vatcindia.com" 
+             class="touch-cell rounded-xl p-3 flex flex-col justify-between group">
+            <div class="flex items-center justify-between text-slate-400 group-hover:text-sky-400 transition">
+              <span class="text-[10px] font-mono uppercase tracking-wider">Systems</span>
+              <i data-lucide="globe" class="w-4 h-4 text-sky-400"></i>
+            </div>
+            <div class="mt-2 text-left">
+              <span class="block text-xs font-bold text-white group-hover:text-sky-400 transition">vatcindia.com</span>
+              <span class="block text-[10px] font-mono text-slate-400">Hardware Portal</span>
+            </div>
+          </a>
+
+          <!-- Direct Email / RFQ -->
+          <a href="mailto:paragkapani.pk@gmail.com?subject=VATC%20Machinery%20Inquiry" 
+             class="touch-cell rounded-xl p-3 flex flex-col justify-between group">
+            <div class="flex items-center justify-between text-slate-400 group-hover:text-slate-200 transition">
+              <span class="text-[10px] font-mono uppercase tracking-wider">Specs</span>
+              <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i>
+            </div>
+            <div class="mt-2 text-left">
+              <span class="block text-xs font-bold text-white group-hover:text-slate-200 transition">Email RFQ</span>
+              <span class="block text-[10px] font-mono text-slate-400">Official Specs</span>
+            </div>
+          </a>
+
+        </div>
+
       </div>
 
-    </div>
+      <!-- Card Footer Coordinates -->
+      <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-slate-400">
+        <span>MUMBAI &bull; MAHARASHTRA</span>
+        <span class="text-slate-400">EST. 2003</span>
+      </div>
 
-    <!-- PRIMARY ACTION: 1-TAP SAVE CONTACT TO PHONE (.VCF) -->
-    <button onclick="saveContact()" class="w-full tactile-btn bg-white hover:bg-slate-200 text-slate-950 font-display font-bold py-3.5 px-5 rounded-xl text-sm flex items-center justify-center gap-2 shadow-xl cursor-pointer">
-      <i data-lucide="user-plus" class="w-4 h-4 text-slate-950"></i>
-      <span>Save Contact to Phone</span>
-    </button>
-
-    <!-- TACTILE ACTION TILES -->
-    <div class="space-y-2.5">
-
-      <!-- 1. WhatsApp Direct (Auto-prefilled with Expo text) -->
-      <a href="https://wa.me/919619443622?text=Hi%20Parag,%20pleasure%20meeting%20you%20at%20the%20exhibition.%20Let%27s%20connect%20regarding%20VATC%20automation%20systems." 
-         target="_blank" 
-         rel="noopener"
-         class="tactile-btn flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900 group">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition">
-            <i data-lucide="message-circle" class="w-5 h-5"></i>
-          </div>
-          <div class="text-left">
-            <span class="text-xs font-mono uppercase text-slate-400 block leading-tight">Instant Chat</span>
-            <span class="text-sm font-bold text-white group-hover:text-emerald-400 transition">WhatsApp Direct</span>
-          </div>
-        </div>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition"></i>
-      </a>
-
-      <!-- 2. Direct Phone Call -->
-      <a href="tel:+919619443622" 
-         class="tactile-btn flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-red-500/50 hover:bg-slate-900 group">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:scale-105 transition">
-            <i data-lucide="phone" class="w-5 h-5"></i>
-          </div>
-          <div class="text-left">
-            <span class="text-xs font-mono uppercase text-slate-400 block leading-tight">Voice Line</span>
-            <span class="text-sm font-bold font-mono text-white group-hover:text-red-400 transition">+91 99999 99999</span>
-          </div>
-        </div>
-        <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-red-400 transition"></i>
-      </a>
-
-      <!-- 3. Official Website (vatcindia.com) -->
-      <a href="https://vatcindia.com" 
-         class="tactile-btn flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-900 group">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition">
-            <i data-lucide="globe" class="w-5 h-5"></i>
-          </div>
-          <div class="text-left">
-            <span class="text-xs font-mono uppercase text-slate-400 block leading-tight">Online Portal & Hardware</span>
-            <span class="text-sm font-bold text-white group-hover:text-sky-400 transition">vatcindia.com</span>
-          </div>
-        </div>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-sky-400 transition"></i>
-      </a>
-
-      <!-- 4. Direct Email -->
-      <a href="mailto:paragkapani.pk@gmail.com?subject=Exhibition%20Inquiry%20-%20VATC%20Systems" 
-         class="tactile-btn flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 group">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 group-hover:scale-105 transition">
-            <i data-lucide="mail" class="w-5 h-5"></i>
-          </div>
-          <div class="text-left">
-            <span class="text-xs font-mono uppercase text-slate-400 block leading-tight">Formal RFQ & Specifications</span>
-            <span class="text-xs font-mono text-white group-hover:text-slate-300 transition">engineering@vatcindia.com</span>
-          </div>
-        </div>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition"></i>
-      </a>
-
-    </div>
-
-    <!-- Quick Footer -->
-    <div class="text-center pt-3 pb-6 text-[10px] font-mono text-slate-500 tracking-wider">
-      VIRAJ AUTOMATION TECHNOLOGY CO. &bull; MUMBAI
     </div>
 
   </main>
 
-  <!-- Lucide & vCard Auto-Generator Logic -->
   <script>
     lucide.createIcons();
 
-    // Dynamically generates and triggers vCard download directly into iOS / Android contacts
     function saveContact() {
       const vcardData = [
         'BEGIN:VCARD',
@@ -236,12 +213,12 @@
         'N:Kapani;Parag;;;',
         'FN:Parag Kapani',
         'ORG:Viraj Automation Technology Co. (VATC)',
-        'TITLE:Founder & Technical Director',
+        'TITLE:Founder',
         'TEL;TYPE=WORK,VOICE:+919619443622',
         'EMAIL;TYPE=WORK:paragkapani.pk@gmail.com',
         'URL:https://vatcindia.com',
         'ADR;TYPE=WORK:;;Mumbai;Maharashtra;;India',
-        'NOTE:Industrial Automation, Web Guiding Systems & High-Speed Motion Control.',
+        'NOTE:Custom Web Guiding Systems & High-Speed Embedded Motion Control.',
         'END:VCARD'
       ].join('\r\n');
 
