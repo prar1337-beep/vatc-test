@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VATC Series WG-200 Technical Brochure</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .page-break {
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+    }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    
+    .a4-sheet {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      box-sizing: border-box;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 14mm 16mm 12mm 16mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media screen {
+      .a4-sheet {
+        margin-top: 16px;
+        margin-bottom: 24px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.06);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Helper for Browser View -->
+  <div class="no-print fixed top-4 right-4 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-3 font-mono text-xs border border-slate-700">
+    <span>Ready to export:</span>
+    <button onclick="window.print()" class="bg-[#ff1e1e] hover:bg-red-700 text-white font-bold px-3 py-1.5 rounded transition">
+      Save / Print to PDF (Ctrl+P)
+    </button>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PAGE 1: OVERVIEW, FEATURES & ARCHITECTURE  -->
+  <!-- ========================================== -->
+  <div class="a4-sheet page-break">
+    
+    <!-- Top Header -->
+    <div>
+      <div class="flex items-center justify-between border-b-2 border-slate-900 pb-3">
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="VATC" class="h-8 object-contain" />
+          <div class="border-l border-slate-300 pl-3">
+            <span class="text-[11px] font-mono font-bold tracking-wider text-slate-900 block leading-tight">VIRAJ AUTOMATION TECHNOLOGY CO.</span>
+            <span class="text-[9px] font-mono tracking-widest text-slate-500 block leading-tight">PRECISION INDUSTRIAL AUTOMATION SYSTEMS</span>
+          </div>
+        </div>
+        <div class="text-right">
+          <span class="bg-[#ff1e1e] text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded tracking-wider uppercase">Datasheet</span>
+          <span class="block text-[10px] font-mono text-slate-600 mt-1">REV 2026.1 &bull; DOC-WG200</span>
+        </div>
+      </div>
+
+      <!-- Title & Product Badging -->
+      <div class="mt-4 flex justify-between items-baseline">
+        <div>
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#ff1e1e] uppercase">SERIES WG-200</span>
+          <h1 class="text-2xl font-bold font-display text-slate-950 tracking-tight leading-tight mt-0.5">
+            Ultrasonic Closed-Loop Web Guiding System
+          </h1>
+          <p class="text-xs text-slate-600 mt-1 max-w-xl">
+            High-speed lateral edge and center alignment controller engineered for rewinding, slitting, printing, and continuous film/laminate conversion lines.
+          </p>
+        </div>
+      </div>
+
+      <!-- Key Performance Metrics Strip -->
+      <div class="grid grid-cols-4 gap-3 mt-4">
+        <div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+          <span class="text-[9px] font-mono text-slate-500 uppercase block">Correction Precision</span>
+          <span class="text-base font-bold font-mono text-slate-900">&plusmn; 0.05 mm</span>
+        </div>
+        <div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+          <span class="text-[9px] font-mono text-slate-500 uppercase block">Interrupt Cycle</span>
+          <span class="text-base font-bold font-mono text-slate-900">&lt; 1.0 ms</span>
+        </div>
+        <div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+          <span class="text-[9px] font-mono text-slate-500 uppercase block">Max Line Velocity</span>
+          <span class="text-base font-bold font-mono text-slate-900">350 m/min</span>
+        </div>
+        <div class="p-2.5 rounded bg-slate-50 border border-slate-200">
+          <span class="text-[9px] font-mono text-slate-500 uppercase block">Substrate Support</span>
+          <span class="text-base font-bold font-mono text-[#ff1e1e]">Clear / Opaque</span>
+        </div>
+      </div>
+
+      <!-- System Illustration / Hardware Overview Block -->
+      <div class="grid grid-cols-12 gap-4 mt-5 items-center bg-slate-950 text-white rounded-lg p-4 border border-slate-900">
+        <div class="col-span-5">
+          <img src="hmi-aligner-field.jpg" alt="VATC WG-200 Web Aligner" class="w-full h-36 object-cover rounded border border-slate-800" />
+          <div class="mt-2 text-center text-[9px] font-mono text-slate-400">
+            FAS-200 Panel Enclosure & Center Aligner
+          </div>
+        </div>
+        <div class="col-span-7 space-y-2">
+          <h2 class="text-sm font-bold font-display text-white flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#ff1e1e]"></span>
+            Deterministic Dynamic Compensation
+          </h2>
+          <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
+            The WG-200 platform pairs high-frequency 200 kHz ultrasonic fork transducers with a bare-metal micro-stepping actuator carriage. By sampling material runout at high interrupt rates, the proprietary internal PID algorithm eliminates oscillation and hunting at line speeds exceeding 300 meters per minute.
+          </p>
+          <div class="pt-2 border-t border-slate-800 grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
+            <div>&bull; Optical &amp; TVS Line Isolation</div>
+            <div>&bull; One-Touch L / C / R Calibration</div>
+            <div>&bull; No Retune on Roll Diameter Shift</div>
+            <div>&bull; Direct PLC Remote Interface</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Features Grid -->
+      <div class="mt-5">
+        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1.5 border-b border-slate-200">
+          Engineering Architecture &amp; Advantages
+        </h3>
+        <div class="grid grid-cols-3 gap-3.5 mt-3">
+          
+          <div class="border border-slate-200 rounded p-2.5 bg-slate-50">
+            <div class="flex items-center gap-1.5 text-[#ff1e1e] font-mono text-xs font-bold mb-1">
+              <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+              <span>Ultrasonic Sensing</span>
+            </div>
+            <p class="text-[10px] text-slate-600 leading-normal">
+              High-frequency acoustic transmission is completely immune to clear plastic transparency, printed text, metal foil reflections, or changing ambient daylight.
+            </p>
+          </div>
+
+          <div class="border border-slate-200 rounded p-2.5 bg-slate-50">
+            <div class="flex items-center gap-1.5 text-[#ff1e1e] font-mono text-xs font-bold mb-1">
+              <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+              <span>Closed-Loop PID Core</span>
+            </div>
+            <p class="text-[10px] text-slate-600 leading-normal">
+              Calculates proportional correction displacement in real time. Adaptive damping avoids mechanical kickback on splices or roll unbalance.
+            </p>
+          </div>
+
+          <div class="border border-slate-200 rounded p-2.5 bg-slate-50">
+            <div class="flex items-center gap-1.5 text-[#ff1e1e] font-mono text-xs font-bold mb-1">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span>Rugged Shop Enclosure</span>
+            </div>
+            <p class="text-[10px] text-slate-600 leading-normal">
+              Heavy gauge powder-coated MS front fascia with sealed tactile membrane keys designed to endure aggressive factory particulate and static discharge.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Typical Plant Applications -->
+      <div class="mt-4">
+        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1.5 border-b border-slate-200">
+          Typical Machinery Integrations
+        </h3>
+        <div class="grid grid-cols-4 gap-2 mt-2 font-mono text-[10px] text-slate-700">
+          <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
+            Slitter Rewinder Units
+          </div>
+          <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
+            Rotogravure &amp; Flexo
+          </div>
+          <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
+            Lamination &amp; Coating
+          </div>
+          <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
+            Pouch / Bag Conversion
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 1 Footer Strip -->
+    <div class="border-t border-slate-200 pt-2 flex items-center justify-between text-[9px] font-mono text-slate-500">
+      <span>VATC &bull; Viraj Automation Technology Co.</span>
+      <span>vatcindia.com &bull; vatcindia@gmail.com</span>
+      <span>Page 1 of 2</span>
+    </div>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PAGE 2: SPECS, SCHEMATICS & TERMINAL MAP   -->
+  <!-- ========================================== -->
+  <div class="a4-sheet">
+
+    <!-- Top Header Page 2 -->
+    <div>
+      <div class="flex items-center justify-between border-b-2 border-slate-900 pb-3">
+        <div class="flex items-center gap-3">
+          <img src="logo.png" alt="VATC" class="h-7 object-contain" />
+          <span class="text-xs font-mono font-bold tracking-wider text-slate-900">SERIES WG-200 SPECIFICATIONS &amp; PINOUT</span>
+        </div>
+        <span class="text-[10px] font-mono text-slate-500">SECTION: HARDWARE &amp; CABLING</span>
+      </div>
+
+      <!-- Technical Specifications Table -->
+      <div class="mt-4">
+        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1.5 border-b border-slate-200">
+          1. Electrical &amp; Operational Ratings
+        </h3>
+        <table class="w-full text-left font-mono text-[10px] mt-2 border-collapse">
+          <thead>
+            <tr class="bg-slate-100 border border-slate-300 text-slate-800">
+              <th class="p-1.5 font-bold border border-slate-300 w-1/3">Parameter</th>
+              <th class="p-1.5 font-bold border border-slate-300 w-1/3">Rated Specification</th>
+              <th class="p-1.5 font-bold border border-slate-300 w-1/3">Notes / Engineering Standard</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700">
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Main Operating Voltage</td>
+              <td class="p-1.5 border border-slate-200">24V DC &plusmn; 10%</td>
+              <td class="p-1.5 border border-slate-200">Standard industrial SMPS, reverse-polarity protected</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Total Power Draw</td>
+              <td class="p-1.5 border border-slate-200">Nominal 12W / Peak 65W</td>
+              <td class="p-1.5 border border-slate-200">Peak draw rated during full-load actuator stroke</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Sensor Interface</td>
+              <td class="p-1.5 border border-slate-200">Ultrasonic Fork Transducer</td>
+              <td class="p-1.5 border border-slate-200">200 kHz operating frequency, 0–5V DC analog feed</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Detection Fork Gap</td>
+              <td class="p-1.5 border border-slate-200">30 mm standard (50 mm opt.)</td>
+              <td class="p-1.5 border border-slate-200">Accommodates thick composite laminates</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Actuator Driver Stage</td>
+              <td class="p-1.5 border border-slate-200">Monolithic H-Bridge PWM</td>
+              <td class="p-1.5 border border-slate-200">Supports DC Geared Motor or 2-Phase Bipolar Stepper</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Step Response Latency</td>
+              <td class="p-1.5 border border-slate-200">&le; 15 ms to step input</td>
+              <td class="p-1.5 border border-slate-200">From transducer deviation to carriage motor movement</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Limit Switch Handling</td>
+              <td class="p-1.5 border border-slate-200">Dual Optical / Inductive (L &amp; R)</td>
+              <td class="p-1.5 border border-slate-200">Hardware safety override prevents over-travel jamming</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Operating Temperature</td>
+              <td class="p-1.5 border border-slate-200">0&deg;C to +55&deg;C</td>
+              <td class="p-1.5 border border-slate-200">Continuous operation in enclosed machine cabinets</td>
+            </tr>
+            <tr class="border border-slate-200">
+              <td class="p-1.5 font-semibold bg-slate-50 border border-slate-200">Enclosure Protection</td>
+              <td class="p-1.5 border border-slate-200">IP54 Front Panel</td>
+              <td class="p-1.5 border border-slate-200">Sealed front bezel protects against ink/dust mist</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Terminal Strip & Wiring Connections Map -->
+      <div class="mt-5">
+        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1.5 border-b border-slate-200">
+          2. Rear Terminal Block Wiring Diagram
+        </h3>
+        
+        <div class="grid grid-cols-2 gap-4 mt-2">
+          
+          <!-- Terminal Block Table -->
+          <div class="border border-slate-300 rounded overflow-hidden">
+            <div class="bg-slate-900 text-white text-[10px] font-mono px-3 py-1 font-bold flex justify-between">
+              <span>TB-1 CONNECTOR PINOUT</span>
+              <span>10-PIN EURO PLUG</span>
+            </div>
+            <table class="w-full text-[9px] font-mono border-collapse">
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center w-10">01</td>
+                <td class="p-1.5 font-bold text-red-600">+24V DC</td>
+                <td class="p-1.5 text-slate-600">Main Power Supply (+)</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">02</td>
+                <td class="p-1.5 font-bold text-slate-900">0V (GND)</td>
+                <td class="p-1.5 text-slate-600">Main Power Supply Return</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">03</td>
+                <td class="p-1.5 font-bold text-emerald-700">EARTH</td>
+                <td class="p-1.5 text-slate-600">Chassis Ground Shield</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">04</td>
+                <td class="p-1.5 font-bold text-sky-700">SNS +12V</td>
+                <td class="p-1.5 text-slate-600">Sensor Power Supply Out</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">05</td>
+                <td class="p-1.5 font-bold text-sky-700">SNS SIG</td>
+                <td class="p-1.5 text-slate-600">Sensor 0–5V Analog In</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">06</td>
+                <td class="p-1.5 font-bold text-sky-700">SNS GND</td>
+                <td class="p-1.5 text-slate-600">Sensor Analog Common</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">07</td>
+                <td class="p-1.5 font-bold text-amber-700">MOT +</td>
+                <td class="p-1.5 text-slate-600">Actuator Driver Output (+)</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">08</td>
+                <td class="p-1.5 font-bold text-amber-700">MOT -</td>
+                <td class="p-1.5 text-slate-600">Actuator Driver Output (-)</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-1.5 bg-slate-100 font-bold text-center">09</td>
+                <td class="p-1.5 font-bold text-purple-700">L-LIMIT</td>
+                <td class="p-1.5 text-slate-600">Left Travel End Switch (N.C.)</td>
+              </tr>
+              <tr>
+                <td class="p-1.5 bg-slate-100 font-bold text-center">10</td>
+                <td class="p-1.5 font-bold text-purple-700">R-LIMIT</td>
+                <td class="p-1.5 text-slate-600">Right Travel End Switch (N.C.)</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Cabling & Installation Guidelines -->
+          <div class="border border-slate-200 rounded p-3 bg-slate-50 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono font-bold text-slate-900 uppercase block mb-1">
+                // Installation Best Practices
+              </span>
+              <ul class="text-[9.5px] text-slate-600 space-y-1.5 leading-relaxed">
+                <li>&bull; <strong class="text-slate-800">Cable Routing:</strong> Run sensor lines in dedicated shielded conduit separated from high-voltage motor or inverter lines by at least 150 mm.</li>
+                <li>&bull; <strong class="text-slate-800">Shield Grounding:</strong> Connect overall foil shield to Earth terminal pin 03 at controller end only to eliminate ground noise loops.</li>
+                <li>&bull; <strong class="text-slate-800">Transducer Focus:</strong> Center edge of substrate at 50% sensor slot depth for symmetrical left/right proportional band.</li>
+              </ul>
+            </div>
+            
+            <div class="mt-3 p-2 bg-amber-50 border border-amber-200 rounded text-[9px] font-mono text-amber-900">
+              <strong>NOTICE:</strong> Standard system matches EN 60204-1 machine safety compliance. Limit switches must remain wired in closed circuit.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Commercial & Procurement Inquiry Box -->
+      <div class="mt-5 p-3.5 bg-slate-950 text-white rounded-lg border border-slate-900 flex items-center justify-between">
+        <div>
+          <span class="text-[9px] font-mono tracking-widest text-[#ff1e1e] uppercase font-bold block">ORDERING &amp; OEM INQUIRIES</span>
+          <div class="text-xs font-bold font-display text-white mt-0.5">Custom Actuator Stroke &amp; Mounting Brackets Available</div>
+          <div class="text-[10px] font-mono text-slate-400 mt-1">
+            Standard package includes: WG-200 Controller, Ultrasonic Sensor, 3m Interconnect Cable &amp; Manual.
+          </div>
+        </div>
+        <div class="text-right font-mono shrink-0 pl-4">
+          <span class="text-[10px] text-slate-400 block">Direct Engineering Line:</span>
+          <span class="text-xs font-bold text-white block">+91 9619443622</span>
+          <span class="text-[10px] text-[#ff1e1e] font-semibold">vatcindia.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 2 Footer Strip with Full Company Info -->
+    <div class="border-t border-slate-200 pt-2 flex items-center justify-between text-[9px] font-mono text-slate-500">
+      <div>
+        <strong>Viraj Automation Technology Co. (VATC)</strong> &bull; Mumbai, Maharashtra, India
+      </div>
+      <div>
+        Founder: <strong>Parag Kapani</strong> &bull; vatcindia@gmail.com
+      </div>
+      <div>
+        Page 2 of 2
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
