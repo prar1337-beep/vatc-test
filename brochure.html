@@ -71,8 +71,8 @@
     </button>
   </div>
 
-  <!-- ========================================== -->
-  <!-- PAGE 1: OVERVIEW, FEATURES & ARCHITECTURE  -->
+<!-- ========================================== -->
+  <!-- PAGE 1: OVERVIEW, HARDWARE & ARCHITECTURE  -->
   <!-- ========================================== -->
   <div class="a4-sheet page-break">
     
@@ -125,77 +125,96 @@
         </div>
       </div>
 
-      <!-- System Illustration / Hardware Overview Block -->
-      <div class="grid grid-cols-12 gap-4 mt-5 items-center bg-slate-950 text-white rounded-lg p-4 border border-slate-900">
-        <div class="col-span-5">
-          <img src="hmi-aligner-field.jpg" alt="VATC WG-200 Web Aligner" class="w-full h-36 object-cover rounded border border-slate-800" />
-          <div class="mt-2 text-center text-[9px] font-mono text-slate-400">
-            FAS-200 Panel Enclosure & Center Aligner
+      <!-- Dual Hardware Showcase (Field Unit + Splash GUI) -->
+      <div class="mt-4 bg-slate-950 text-white rounded-lg p-3.5 border border-slate-900">
+        <div class="grid grid-cols-12 gap-3.5 items-center">
+          
+          <!-- Photo 1: Active In-Field Unit -->
+          <div class="col-span-3">
+            <div class="rounded border border-slate-800 overflow-hidden bg-black aspect-[4/3]">
+              <img src="20260621_141432.jpg" alt="Active Unit" class="w-full h-full object-cover" />
+            </div>
+            <div class="mt-1 text-center text-[8.5px] font-mono text-slate-400">
+              Active L-C-R Auto Mode
+            </div>
           </div>
-        </div>
-        <div class="col-span-7 space-y-2">
-          <h2 class="text-sm font-bold font-display text-white flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#ff1e1e]"></span>
-            Deterministic Dynamic Compensation
-          </h2>
-          <p class="text-[11px] text-slate-300 leading-relaxed font-sans">
-            The WG-200 platform pairs high-frequency 200 kHz ultrasonic fork transducers with a bare-metal micro-stepping actuator carriage. By sampling material runout at high interrupt rates, the proprietary internal PID algorithm eliminates oscillation and hunting at line speeds exceeding 300 meters per minute.
-          </p>
-          <div class="pt-2 border-t border-slate-800 grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
-            <div>&bull; Optical &amp; TVS Line Isolation</div>
-            <div>&bull; One-Touch L / C / R Calibration</div>
-            <div>&bull; No Retune on Roll Diameter Shift</div>
-            <div>&bull; Direct PLC Remote Interface</div>
+
+          <!-- Photo 2: Splash Screen & Panel-Mount Bezel -->
+          <div class="col-span-3">
+            <div class="rounded border border-slate-800 overflow-hidden bg-black aspect-[4/3]">
+              <img src="20260603_134223.jpg" alt="VATC Boot Screen" class="w-full h-full object-cover" />
+            </div>
+            <div class="mt-1 text-center text-[8.5px] font-mono text-slate-400">
+              MS Bezel & Boot UI
+            </div>
           </div>
+
+          <!-- Technical Descriptive Core -->
+          <div class="col-span-6 space-y-1.5 pl-1">
+            <div class="flex items-center gap-1.5 text-xs font-bold font-display text-white">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#ff1e1e]"></span>
+              Integrated Operator Interface & Enclosure
+            </div>
+            <p class="text-[10px] text-slate-300 leading-relaxed font-sans">
+              Combines a rugged, powder-coated mild-steel chassis with a high-contrast touch terminal. Eliminates external PLC modules by housing the high-frequency ultrasonic receiver, PID servo processor, and actuator driver within a single compact panel cut-out.
+            </p>
+            <div class="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-slate-800 text-[9px] font-mono text-slate-400">
+              <div>&bull; Sub-millisecond Loop</div>
+              <div>&bull; Optically Isolated I/O</div>
+              <div>&bull; One-Touch Calibration</div>
+              <div>&bull; Zero OS Boot Latency</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <!-- Core Features Grid -->
-      <div class="mt-5">
-        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1.5 border-b border-slate-200">
+      <div class="mt-4">
+        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1 border-b border-slate-200">
           Engineering Architecture &amp; Advantages
         </h3>
-        <div class="grid grid-cols-3 gap-3.5 mt-3">
+        <div class="grid grid-cols-3 gap-3 mt-2.5">
           
           <div class="border border-slate-200 rounded p-2.5 bg-slate-50">
             <div class="flex items-center gap-1.5 text-[#ff1e1e] font-mono text-xs font-bold mb-1">
               <i data-lucide="radio" class="w-3.5 h-3.5"></i>
               <span>Ultrasonic Sensing</span>
             </div>
-            <p class="text-[10px] text-slate-600 leading-normal">
-              High-frequency acoustic transmission is completely immune to clear plastic transparency, printed text, metal foil reflections, or changing ambient daylight.
+            <p class="text-[9.5px] text-slate-600 leading-normal">
+              Acoustic fork transmission is impervious to transparent plastic films, reflective foils, ambient factory dust, or direct sunlight variations.
             </p>
           </div>
 
           <div class="border border-slate-200 rounded p-2.5 bg-slate-50">
             <div class="flex items-center gap-1.5 text-[#ff1e1e] font-mono text-xs font-bold mb-1">
               <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-              <span>Closed-Loop PID Core</span>
+              <span>Deterministic PID</span>
             </div>
-            <p class="text-[10px] text-slate-600 leading-normal">
-              Calculates proportional correction displacement in real time. Adaptive damping avoids mechanical kickback on splices or roll unbalance.
+            <p class="text-[9.5px] text-slate-600 leading-normal">
+              Closed-loop algorithm dynamically computes velocity and position corrections, avoiding carriage overshooting and mechanical wear on web splices.
             </p>
           </div>
 
           <div class="border border-slate-200 rounded p-2.5 bg-slate-50">
             <div class="flex items-center gap-1.5 text-[#ff1e1e] font-mono text-xs font-bold mb-1">
               <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-              <span>Rugged Shop Enclosure</span>
+              <span>Plant-Hardened Enclosure</span>
             </div>
-            <p class="text-[10px] text-slate-600 leading-normal">
-              Heavy gauge powder-coated MS front fascia with sealed tactile membrane keys designed to endure aggressive factory particulate and static discharge.
+            <p class="text-[9.5px] text-slate-600 leading-normal">
+              Heavy-gauge MS front bezel with chemical-resistant silk-screened graphics protects internal logic boards against static sparks and airborne grease.
             </p>
           </div>
 
         </div>
       </div>
 
-      <!-- Typical Plant Applications -->
+      <!-- Typical Machinery Integrations Strip -->
       <div class="mt-4">
-        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1.5 border-b border-slate-200">
-          Typical Machinery Integrations
+        <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 pb-1 border-b border-slate-200">
+          Target Production Machine Applications
         </h3>
-        <div class="grid grid-cols-4 gap-2 mt-2 font-mono text-[10px] text-slate-700">
+        <div class="grid grid-cols-4 gap-2 mt-2 font-mono text-[9.5px] text-slate-700">
           <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
             Slitter Rewinder Units
           </div>
@@ -203,10 +222,10 @@
             Rotogravure &amp; Flexo
           </div>
           <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
-            Lamination &amp; Coating
+            Extrusion Lamination
           </div>
           <div class="p-2 rounded bg-white border border-slate-200 text-center font-semibold">
-            Pouch / Bag Conversion
+            High-Speed Bag Makers
           </div>
         </div>
       </div>
@@ -215,7 +234,7 @@
     <!-- Page 1 Footer Strip -->
     <div class="border-t border-slate-200 pt-2 flex items-center justify-between text-[9px] font-mono text-slate-500">
       <span>VATC &bull; Viraj Automation Technology Co.</span>
-      <span>vatcindia.com &bull; vatcindia@gmail.com</span>
+      <span>vatcindia.com &bull; engineering@vatcindia.com</span>
       <span>Page 1 of 2</span>
     </div>
 
